@@ -1,0 +1,44 @@
+﻿@model IEnumerable<WebApplicationTest.Models.VideoHosting>
+@{
+    ViewBag.Title = "Тестовое заданиеe";
+}
+
+
+<div class="row results">
+    <div class="col-sm-8">
+            Результаты
+      
+    </div>
+    <div class="col-sm-4">
+        <div class="pull-right">
+            <button class="btn btn-default">
+                Показать
+            </button>
+        </div>
+    
+    </div>
+</div>
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <td><p>Название видео</p></td>
+                        <td><p>Источник  </p></td>
+                        <td><p>Время</p></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var video in Model)
+                    {
+                        <tr>
+                            <td><p>@video.NameVideo</p></td>
+                            <td><p>@video.NameHosting</p></td>
+                            <td><p>@(video.Time.ToString("d MMMM yyyy, HH:mm"))</p></td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
+    </div>
