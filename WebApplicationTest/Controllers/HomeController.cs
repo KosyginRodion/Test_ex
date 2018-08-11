@@ -1,23 +1,45 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using WebApplicationTest.Models;
+using WebApplicationTest.VideoParsers;
 
 namespace WebApplicationTest.Controllers
 {
 
        public class HomeController : Controller
-   {
+       {
         VideoHostingContext db = new VideoHostingContext();
 
         public ActionResult Index()
         {
-            // получаем из БД все объекты VideoHosting
-            IEnumerable<VideoHosting> VideoHostings = db.VideoHostings;
-            // возвращаем представление
-            return View(VideoHostings);
+            return View();
         }
+
+        [HttpPost]
+        public ActionResult VideoSearch(string searchValue, string hosting)
+        {
+            IParser parser;
+            switch (hosting)
+            {
+                case HostNames.Yandex:
+                    parser = new YandexParser();
+                    break;
+                default:
+                    throw new NotImplementedException();
+            }
+
+            var results = parser.Parse(searchValue);
+            SaveToDatabase(results);
+            
+            return View(results);
+        }
+
+        private void SaveToDatabase(IEnumerable<VideoHosting> videos)
+        {
+            db.VideoHostings.AddRange(videos);
+            db.SaveChanges();
+        }
+
     }
 }

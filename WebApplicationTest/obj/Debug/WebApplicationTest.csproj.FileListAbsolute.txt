@@ -121,3 +121,5 @@ C:\Users\Родион\Desktop\Тестовое\WebApplicationTest\WebApplication
 C:\Users\Родион\Desktop\Тестовое\WebApplicationTest\WebApplicationTest\bin\EntityFramework.xml
 C:\Users\Родион\Desktop\Тестовое\WebApplicationTest\WebApplicationTest\bin\EntityFramework.SqlServer.xml
 C:\Users\Родион\Desktop\Тестовое\WebApplicationTest\WebApplicationTest\bin\EntityFramework.SqlServerCompact.xml
+C:\Users\Родион\Desktop\Тестовое\WebApplicationTest\WebApplicationTest\bin\AngleSharp.dll
+C:\Users\Родион\Desktop\Тестовое\WebApplicationTest\WebApplicationTest\bin\AngleSharp.xml

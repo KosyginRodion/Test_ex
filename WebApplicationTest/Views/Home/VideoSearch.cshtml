@@ -1,1 +1,31 @@
-﻿
+﻿@model IEnumerable<WebApplicationTest.Models.VideoHosting>
+
+<div class="row results">
+            <div class="col-sm-12">
+                Результаты
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <td><p>Название видео</p></td>
+                            <td><p>Источник  </p></td>
+                            <td><p>Время</p></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var video in Model)
+                        {
+                            <tr>
+                                <td><p>@video.NameVideo</p></td>
+                                <td><p>@video.NameHosting</p></td>
+                                <td><p>@(video.Time.ToString("d MMMM yyyy, HH:mm"))</p></td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
