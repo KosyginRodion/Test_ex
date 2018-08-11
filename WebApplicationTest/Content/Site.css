@@ -23,6 +23,17 @@ textarea {
 }
 
 .results {
-    margin-top: 70px;
-    font-size:24pt;  
+      font-size:24pt;  
+}
+
+.first-row {
+      margin-top: 70px;
+}
+
+.search input {
+    display: block;
+    width: 100%;
+}
+.button-search {
+    padding-top: 25px;
 }
