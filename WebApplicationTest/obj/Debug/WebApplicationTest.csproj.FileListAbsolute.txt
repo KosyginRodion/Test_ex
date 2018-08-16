@@ -262,3 +262,5 @@ C:\Users\ag3r\Rodion\Test_ex\WebApplicationTest\bin\Google.Apis.Core.pdb
 C:\Users\ag3r\Rodion\Test_ex\WebApplicationTest\bin\Google.Apis.Core.xml
 C:\Users\ag3r\Rodion\Test_ex\WebApplicationTest\bin\Google.Apis.YouTube.v3.pdb
 C:\Users\ag3r\Rodion\Test_ex\WebApplicationTest\bin\Google.Apis.YouTube.v3.xml
+C:\Users\ag3r\Rodion\Test_ex\WebApplicationTest\bin\NLog.dll
+C:\Users\ag3r\Rodion\Test_ex\WebApplicationTest\bin\NLog.xml

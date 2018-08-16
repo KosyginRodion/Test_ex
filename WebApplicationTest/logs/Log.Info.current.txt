@@ -1,0 +1,7 @@
+2018-08-16 19:24:38.4992 WebApplicationTest.MvcApplication.Application_Start Info: Application Start 
+2018-08-16 19:24:44.0576 WebApplicationTest.Controllers.HomeController.VideoSearch Info: Got hosting Yandex 
+2018-08-16 19:24:45.6800 WebApplicationTest.Controllers.HomeController.VideoSearch Info: Results parsed 
+2018-08-16 19:24:47.0405 WebApplicationTest.Controllers.HomeController.VideoSearch Info: Results saved to DB, count is 20 
+2018-08-16 19:24:51.1783 WebApplicationTest.Controllers.HomeController.VideoSearch Info: Got hosting Youtube 
+2018-08-16 19:24:51.9479 WebApplicationTest.Controllers.HomeController.VideoSearch Info: Results parsed 
+2018-08-16 19:24:52.0239 WebApplicationTest.Controllers.HomeController.VideoSearch Info: Results saved to DB, count is 20 

@@ -9,6 +9,7 @@ namespace WebApplicationTest.Controllers
 
        public class HomeController : Controller
        {
+        private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
         VideoHostingContext db = new VideoHostingContext();
 
         public ActionResult Index()
@@ -19,6 +20,7 @@ namespace WebApplicationTest.Controllers
         [HttpPost]
         public ActionResult VideoSearch(string hosting)
         {
+            logger.Info($"Got hosting {hosting}");
             IParser parser;
             switch (hosting)
             {
@@ -33,10 +35,11 @@ namespace WebApplicationTest.Controllers
             }
 
             var results = parser.Parse();
+            logger.Info("Results parsed");
             SaveToDatabase(results);
-            
+            logger.Info($"Results saved to DB, count is {results.Count}");
             return View(results);
-        }
+            }
 
         private void SaveToDatabase(IEnumerable<VideoHosting> videos)
         {
