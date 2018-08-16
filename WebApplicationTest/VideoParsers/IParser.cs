@@ -9,6 +9,6 @@ namespace WebApplicationTest.VideoParsers
 {
     interface IParser
     {
-        List<VideoHosting> Parse(string searchValue);
+        List<VideoHosting> Parse();
     }
 }

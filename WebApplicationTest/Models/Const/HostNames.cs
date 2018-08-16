@@ -9,5 +9,6 @@ namespace WebApplicationTest.Models
     {
         public const string Yandex = "Yandex";
         public const string Youtube = "Youtube";
+        public const string request = "Microsoft";
     }
 }

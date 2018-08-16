@@ -17,7 +17,7 @@ namespace WebApplicationTest.Controllers
         }
 
         [HttpPost]
-        public ActionResult VideoSearch(string searchValue, string hosting)
+        public ActionResult VideoSearch(string hosting)
         {
             IParser parser;
             switch (hosting)
@@ -25,11 +25,14 @@ namespace WebApplicationTest.Controllers
                 case HostNames.Yandex:
                     parser = new YandexParser();
                     break;
+                case HostNames.Youtube:
+                    parser = new YoutubeParser();
+                    break;
                 default:
                     throw new NotImplementedException();
             }
 
-            var results = parser.Parse(searchValue);
+            var results = parser.Parse();
             SaveToDatabase(results);
             
             return View(results);

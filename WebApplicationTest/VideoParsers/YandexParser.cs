@@ -14,21 +14,17 @@ namespace WebApplicationTest.VideoParsers
     {
         private string ExcludeTagB(string value)
         {
-            byte[] bytes = Encoding.Default.GetBytes(value);
-            value = Encoding.UTF8.GetString(bytes);
-            var regex = new Regex("(.*)<b>(.*)</b>(.*)");
-            var matchGroups = regex.Match(value).Groups;
-            return matchGroups[1].Value + matchGroups[2].Value + matchGroups[3].Value;
-
+           return value.Replace("<b>", "").Replace("</b>", "");
         }
 
-        public override List<VideoHosting> Parse(string searchValue)
+        public override List<VideoHosting> Parse()
         {
             var parser = new AngleSharp.Parser.Html.HtmlParser();
             string htmlSourse;
             using (WebClient client = new WebClient())
             {
-                htmlSourse = client.DownloadString(GetUrlLink(searchValue));
+                client.Encoding = Encoding.UTF8;
+                htmlSourse = client.DownloadString(GetUrlLink());
             }
 
             IHtmlDocument document = parser.Parse(htmlSourse);
@@ -48,9 +44,9 @@ namespace WebApplicationTest.VideoParsers
             return result;
         }
 
-        protected override string GetUrlLink(string searchValue)
+        protected override string GetUrlLink()
         {
-            return $"https://yandex.ru/video/search?text={searchValue}&path=main";
+            return $"https://yandex.ru/video/search?text={HostNames.request}&path=main";
         }
     }
 }

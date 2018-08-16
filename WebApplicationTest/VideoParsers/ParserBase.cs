@@ -8,8 +8,8 @@ namespace WebApplicationTest.VideoParsers
 {
     public abstract class ParserBase : IParser
     {
-        public abstract List<VideoHosting> Parse(string searchValue);
+        public abstract List<VideoHosting> Parse();
 
-        protected abstract string GetUrlLink(string searchValue);
+        protected abstract string GetUrlLink();
     }
 }
