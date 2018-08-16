@@ -42,7 +42,7 @@ namespace WebApplicationTest.VideoParsers
 
         protected override string GetUrlLink()
         {
-            return $"https://www.youtube.com/results?search_query={HostNames.request}";
+            return "https://www.youtube.com/results?search_query=Microsoft";
         }
     }
 }

@@ -46,7 +46,7 @@ namespace WebApplicationTest.VideoParsers
 
         protected override string GetUrlLink()
         {
-            return $"https://yandex.ru/video/search?text={HostNames.request}&path=main";
+            return "https://yandex.ru/video/search?text=Microsoft&path=main";
         }
     }
 }
